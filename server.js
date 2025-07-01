@@ -1,21 +1,24 @@
 //ESM MODULES
 import express from 'express';
 //import db from './database.js';
+import router from './routes/landing_page.js';
 
+
+/*
+    This is the web server of the application
+*/
 const app = express();
 const port = 3000;
+
+// Set EJS as the view engine
+app.set('view engine', 'ejs');
 
 // Middleware
 // Parse JSON bodies
 app.use(express.json());
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
-
 // Routes
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+app.use('/api/v1/', router);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
