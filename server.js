@@ -1,8 +1,6 @@
 //ESM MODULES
 import express from 'express';
-//import db from './database.js';
 import router from './routes/landing_page.js';
-
 
 /*
     This is the web server of the application
@@ -18,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 
 // Routes
-app.use('/api/v1/', router);
+app.use('/api/v1', router);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
