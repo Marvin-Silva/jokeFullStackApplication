@@ -1,15 +1,17 @@
 # Backend appllication
 
 ## Routes:
+
 ### Ajouter une blague
 
-#### pour ajouter une blague, il suffit de se rendre sur la route : 
-    http://localhost:3000/api/v1/add/joke
+#### pour ajouter une blague, il suffit de se rendre sur la route :
 
-    Voici un aperçu:
+http://localhost:3000/api/v1/add/joke
 
-    ![Postman](./assets/capture.jpg)
+Voici un aperçu:
 
-    ![Interface client](./assets/capture01.jpg) 
+![Postman](./assets/capture.jpg)
 
-    POV: ne pas oublier le corps de la requêtes
+![Interface client](./assets/capture01.jpg) 
+
+POV: ne pas oublier le corps de la requêtes
