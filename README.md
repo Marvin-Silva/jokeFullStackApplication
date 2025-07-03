@@ -17,4 +17,14 @@ Database: Sqlite
 Documentation: Swagger
 
 ### Run the app
-... in progress
+
+#### Backend : 
+     Depuis le dossier racine tapez la commande: 
+        
+        cd backend
+        node server.js
+    
+    Et accédez l'application via l'url: http://localhost:3000/api/v1/***
+
+### Frontend en cours...
+    
