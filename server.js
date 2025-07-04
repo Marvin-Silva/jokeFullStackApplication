@@ -1,6 +1,7 @@
 //ESM MODULES
 import express from 'express';
 import router from './routes/landing_page.js';
+import cors from 'cors';
 
 /*
     This is the web server of the application
@@ -8,8 +9,7 @@ import router from './routes/landing_page.js';
 const app = express();
 const port = 3000;
 
-// Set EJS as the view engine
-app.set('view engine', 'ejs');
+app.use(cors());
 
 // Middleware
 // Parse JSON bodies
