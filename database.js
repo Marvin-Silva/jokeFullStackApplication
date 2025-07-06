@@ -15,7 +15,7 @@ database.serialize(()=>{
 
     const insert = database.prepare(`INSERT INTO jokes (question, response) VALUES (?,?)`);
 
-    insert.run('Quelle est la femelle du hamster ?','L’Amsterdam');
+    // insert.run('Quelle est la femelle du hamster ?','L’Amsterdam');
 
     insert.finalize();
 
