@@ -4,9 +4,35 @@ import database from '../database.js';
 /*
     This is the routes endpoints to landing page 
 */
+
 const router = express.Router();
 
-// Get all Jokes 
+
+/**
+ * @swagger
+ * /blagues:
+ *   get:
+ *     summary: Récupere plusieurs blagues
+ *     description: Renvoie une liste des blagues
+ *     responses:
+ *       200:
+ *         description: Liste des blagues récupérée avec succès
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                   question:
+ *                     type: string
+ *                   reponse:
+ *                     type: string 
+ *       404:
+ *         description: Liste non recupéré
+ */
 router.get('/blagues', (req, res) => {
     database.all('SELECT * FROM jokes', [], (err, joke_list)=>{
         if(err){
@@ -17,7 +43,30 @@ router.get('/blagues', (req, res) => {
     })
 });
 
-// Get Random joke
+
+/**
+ * @swagger
+ * /blagues/random:
+ *   get:
+ *     summary: Récupere une blague
+ *     description: Renvoie une blague aléatoire
+ *     responses:
+ *       200:
+ *         description: Blague récupérée avec succès
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                 question:
+ *                   type: string
+ *                 response:
+ *                   type: string
+ *       404:
+ *         description: Blague non generée
+ */
 router.get('/blagues/random', (req, res)=>{
 
     database.all('SELECT * FROM jokes', [], (err, joke_list) => {
@@ -33,7 +82,36 @@ router.get('/blagues/random', (req, res)=>{
     });
 });
 
-// Retriever Joke identifier
+
+/**
+ * @swagger
+ * /blagues/:id:
+ *   get:
+ *     summary: Récupere une blague
+ *     description: Renvoie une blague par son identifiant
+ *     parameters: 
+ *      - in: path
+ *        name: id
+ *        required: true
+ *        schema: 
+ *          type: integer 
+ *     responses:
+ *       200:
+ *         description: OK
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 id:
+ *                   type: integer
+ *                 question:
+ *                   type: string
+ *                 response:
+ *                   type: string
+ *       404:
+ *         description: Blague non trouvée
+ */
 router.get('/blagues/:id', (req, res) => {
     const id = req.params.id;
 
@@ -46,7 +124,38 @@ router.get('/blagues/:id', (req, res) => {
     });
 });
 
-// Add new Joke
+/**
+ * @swagger
+ * /add/joke:
+ *   post:
+ *     summary: Ajoute une blague
+ *     description: Fonction sans retour
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               question:
+ *                 type: string
+ *               response:
+ *                 type: string
+ *       schema:
+ *          type: string
+ *     responses:
+ *       200:
+ *         description: Blague ajoutée avec succès
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *       404:
+ *         description: Blague non ajoutée
+ */
 router.post('/add/joke', (req, res) => {
     const question = req.body.question;
     const response = req.body.response;
