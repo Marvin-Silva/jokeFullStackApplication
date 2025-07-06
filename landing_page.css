@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.global-setting-joke{
+    margin: auto;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto';
+    background-color: #fedb27;
+
+#logo-container-head{
+    background-color: #fedb27;
+
+    #logo-head{
+        height: 100px;
+    }
+}
+#jokes-container{
+    position: relative;
+    z-index: 3;
+    height: 500px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background-color: #ffffff;
+    
+    #title-head{
+        text-align: center;
+        font-family: "Dunbar";
+        font-style: normal;
+        font-weight:border;
+        text-transform: uppercase;
+        color: #05153b;
+        letter-spacing: 0.125rem;
+        padding-top: 30px;
+
+    }
+    #jokes-container-div{
+        position:absolute;
+        z-index: 2;
+        top: 100px;
+        border: 2px solid #f09800;
+        background-color: beige;
+        border-radius: 1.8em;
+        width: 800px;
+        height: 200px;
+        margin-left: 17%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;      /* Les éléments restent l’un au-dessus de l’autre */
+        justify-content: center;     /* Centre verticalement dans la div */
+        align-items: center; 
+
+        #joke-question{
+           color: #e3097e; 
+        }
+        #joke-response{
+            color: #e3097e;
+        }
+    }
+        #btn-joke-random{
+            position: absolute;
+            z-index: 1;
+            border-radius: 500px;
+            border:2px solid  #f09800;
+            width: 220px;
+            height: 50px;
+            color: #ffffff;
+            background: #f09800;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 0 5px 0 5px;
+            text-align: center;
+            left: 45%;
+            top: 70%; 
+            font-weight: 700;
+            text-transform: uppercase;
+    }
+}
+}
