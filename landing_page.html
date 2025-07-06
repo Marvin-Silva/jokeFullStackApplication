@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="landing_page.css">
     <script type="module" src="landing_page.js" defer></script>
     <title>Landing page</title>
 </head>
-<body>
-    <header>
-        <h1>Les blagues du jour</h1>
+<body class="global-setting-joke">
+    <header id="logo-container-head">
+        <img src="./bandeau.png" alt="carambar-bandeau" id="logo-head">
     </header>
-    <section id="jokes-container"></section>
+    <section id="jokes-container">
+        <h1 id="title-head">Les blagues du jour</h1>
+        <div id="jokes-container-div">
+            <h3 id="joke-question">Quelle est la femelle du hamster ?</h3>
+            <p id="joke-response">L’Amsterdam</p>
+        </div>
+        
+        <input type="button" value="Nouvelle blague" id="btn-joke-random">
+      
+    </section>
     <footer></footer>
 </body>
 </html>
