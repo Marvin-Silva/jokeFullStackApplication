@@ -26,3 +26,5 @@ POV: ne pas oublier le corps de la requêtes
 
 ##### Swagger 
 Pour visualiser la documentation swagger, il suffit d'accèder cette url: http://localhost:3000/api-docs/#/default après le lancement de l'application:
+
+##### Api deployé et disponible sur: https://joke-backend-api.onrender.com/
