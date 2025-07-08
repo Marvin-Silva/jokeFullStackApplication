@@ -7,23 +7,24 @@
     font-weight: bold;
     font-family: 'Roboto';
     background-color: #fedb27;
+}
 
 #logo-container-head{
     background-color: #fedb27;
-
-    #logo-head{
-        height: 100px;
-    }
 }
+#logo-container-head #logo-head{
+    height: 100px;
+}
+
 #jokes-container{
     position: relative;
     z-index: 3;
     height: 500px;
-    margin-left: 200px;
-    margin-right: 200px;
+    width: 1000px;
+    margin: 0 auto;
     background-color: #ffffff;
-    
-    #title-head{
+} 
+#jokes-container #title-head{
         text-align: center;
         font-family: "Dunbar";
         font-style: normal;
@@ -34,7 +35,7 @@
         padding-top: 30px;
 
     }
-    #jokes-container-div{
+#jokes-container  #jokes-container-div{
         position:absolute;
         z-index: 2;
         top: 100px;
@@ -43,21 +44,20 @@
         border-radius: 1.8em;
         width: 800px;
         height: 200px;
-        margin-left: 17%;
+        right: 10%;
         text-align: center;
         display: flex;
         flex-direction: column;      /* Les éléments restent l’un au-dessus de l’autre */
         justify-content: center;     /* Centre verticalement dans la div */
         align-items: center; 
-
-        #joke-question{
-           color: #e3097e; 
-        }
-        #joke-response{
-            color: #e3097e;
-        }
     }
-        #btn-joke-random{
+#jokes-container-div  #joke-question{
+        color: #e3097e; 
+     }
+    #jokes-container-div #joke-response{
+         color: #e3097e;
+     }
+#jokes-container #btn-joke-random{
             position: absolute;
             z-index: 1;
             border-radius: 500px;
@@ -70,10 +70,27 @@
             font-size: 16px;
             padding: 0 5px 0 5px;
             text-align: center;
-            left: 45%;
+            left: 40%;
             top: 70%; 
             font-weight: 700;
             text-transform: uppercase;
     }
+
+@media screen and (max-width: 1496px){
+#jokes-container #jokes-container-div{
+    width: 90%;
+    right: 5%;
 }
+#jokes-container{
+    width: 90%;
+    margin-top: 5%;
+}
+}
+@media screen and (max-width: 768px){
+    #jokes-container #btn-joke-random{
+        left: 23%;
+    }
+    #logo-container-head #logo-head{
+        width: 90%;
+    }
 }
