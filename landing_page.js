@@ -1,20 +1,25 @@
-document.getElementById('btn-joke-random').addEventListener('click', function(){
-  fetch('https://joke-backend-api.onrender.com/api/v1/blagues/random')
-  .then(response => response.json())
-  .then(joke => {
-    const container = document.getElementById('jokes-container');
-  
-      const jokeDiv = document.getElementById('jokes-container-div');
+const h3 = document.getElementById('joke-question');
+const p = document.getElementById('joke-response');
 
-      jokeDiv.innerHTML = `
-        <h3 id="joke-question">${joke.question}</h3>
-        <p id="joke-response">${joke.response}</p>
-      `;
-      container.appendChild(jokeDiv);
-    
+// Starting data 
+fetch('http://localhost:3000/api/v1/blagues/random')
+.then(response => response.json()).then((data)=>{
+  h3.textContent = data.question;
+  p.textContent  = data.response;
+});
+
+// Loading data to each click
+document.getElementById('btn-joke-random').addEventListener('click', function(){
+  
+  fetch('http://localhost:3000/api/v1/blagues/random')
+  .then(response => response.json())
+  .then(joke => {    
+      h3.textContent = `${joke.question}`;
+      p.textContent = `${joke.response}`;
   })
   .catch(err => {
     console.error('Erreur fetch:', err);
   });
 
 });
+
