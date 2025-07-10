@@ -4,15 +4,20 @@ import router from './routes/landing_page.js';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
-
+import sequelize from './database/database.js';
+import helmet from 'helmet';
 /*
     This is the web server of the application
 */
 const app = express();
 const port = 3000;
 
+sequelize.authenticate().then(()=>{console.log("Connection reussie à SQLITE"); return sequelize.sync();});
+
 // Accept all external requests
 app.use(cors());
+
+app.use(helmet());
 
 // Middleware
 // Parse JSON bodies
